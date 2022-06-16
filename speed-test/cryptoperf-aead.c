@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 - 2021, Stephan Mueller <smueller@chronox.de>
+ * Copyright (C) 2015 - 2022, Stephan Mueller <smueller@chronox.de>
  *
  * License: see LICENSE file in root directory
  *
@@ -348,6 +348,26 @@ static const struct cp_aead_tests testcases[] = {
 	{ "SM4(G) CCM(G)", "ccm(sm4-generic)", 16, 16, 0 },
 	{ "SM4(AVX) CCM(G)", "ccm(sm4-aesni-avx)", 16, 16, 0 },
 	{ "SM4(AVX2) CCM(G)", "ccm(sm4-aesni-avx2)", 16, 16, 0 },
+
+	{ "AES(CAAM) GCM(CAAM) 128", "gcm-aes-caam", 16, 16, 0 },
+	{ "AES(CAAM) GCM(CAAM) 192", "gcm-aes-caam", 24, 16, 0 },
+	{ "AES(CAAM) GCM(CAAM) 256", "gcm-aes-caam", 32, 16, 0 },
+
+	{ "AES(STM32) GCM(STM32) 128", "stm32-gcm-aes", 16, 16, 0 },
+	{ "AES(STM32) GCM(STM32) 192", "stm32-gcm-aes", 24, 16, 0 },
+	{ "AES(STM32) GCM(STM32) 256", "stm32-gcm-aes", 32, 16, 0 },
+
+	{ "AES(STM32) CCM(STM32) 128", "stm32-ccm-aes", 16, 16, 1 },
+	{ "AES(STM32) CCM(STM32) 192", "stm32-ccm-aes", 24, 16, 1 },
+	{ "AES(STM32) CCM(STM32) 256", "stm32-ccm-aes", 32, 16, 1 },
+
+	{ "AES(ARM64 CE) GCM(ARM64 CE) 128", "gcm-aes-ce", 16, 16, 0 },
+	{ "AES(ARM64 CE) GCM(ARM64 CE) 192", "gcm-aes-ce", 24, 16, 0 },
+	{ "AES(ARM64 CE) GCM(ARM64 CE) 256", "gcm-aes-ce", 32, 16, 0 },
+
+	{ "AES(ARM64 CE) CCM(ARM64 CE) 128", "ccm-aes-ce", 16, 16, 1 },
+	{ "AES(ARM64 CE) CCM(ARM64 CE) 192", "ccm-aes-ce", 24, 16, 1 },
+	{ "AES(ARM64 CE) CCM(ARM64 CE) 256", "ccm-aes-ce", 32, 16, 1 },
 };
 
 static struct cp_test cp_aead_testdef[(2 * (ARRAY_SIZE(testcases)))];

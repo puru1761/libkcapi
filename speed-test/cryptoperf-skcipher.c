@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 - 2021, Stephan Mueller <smueller@chronox.de>
+ * Copyright (C) 2015 - 2022, Stephan Mueller <smueller@chronox.de>
  *
  * License: see LICENSE file in root directory
  *
@@ -205,6 +205,18 @@ static const struct cp_skcipher_tests testcases[] = {
 	{ "AES(i586) CBC(G) 192", "cbc(aes-asm)", 24 },
 	{ "AES(i586) CBC(G) 256", "cbc(aes-asm)", 32 },
 
+	{ "AES(CAAM) CBC(CAAM) 128", "cbc-aes-caam", 16 },
+	{ "AES(CAAM) CBC(CAAM) 192", "cbc-aes-caam", 24 },
+	{ "AES(CAAM) CBC(CAAM) 256", "cbc-aes-caam", 32 },
+
+	{ "AES(STM32) CBC(STM32) 128", "stm32-cbc-aes", 16 },
+	{ "AES(STM32) CBC(STM32) 192", "stm32-cbc-aes", 24 },
+	{ "AES(STM32) CBC(STM32) 256", "stm32-cbc-aes", 32 },
+
+	{ "AES(ARM64 CE) CBC(ARM64 CE) 128", "cbc-aes-ce", 16 },
+	{ "AES(ARM64 CE) CBC(ARM64 CE) 192", "cbc-aes-ce", 24 },
+	{ "AES(ARM64 CE) CBC(ARM64 CE) 256", "cbc-aes-ce", 32 },
+
 	{ "AES(MV-CESA) CBC(MV-CESA) 128", "mv-cbc-aes", 16 },
 	{ "AES(MV-CESA) CBC(MV-CESA) 192", "mv-cbc-aes", 24 },
 	{ "AES(MV-CESA) CBC(MV-CESA) 256", "mv-cbc-aes", 32 },
@@ -226,6 +238,18 @@ static const struct cp_skcipher_tests testcases[] = {
 	{ "AES(i586) CTR(G) 192", "ctr(aes-asm)", 24 },
 	{ "AES(i586) CTR(G) 256", "ctr(aes-asm)", 32 },
 
+	{ "AES(CAAM) CTR(CAAM) 128", "ctr-aes-caam", 16 },
+	{ "AES(CAAM) CTR(CAAM) 192", "ctr-aes-caam", 24 },
+	{ "AES(CAAM) CTR(CAAM) 256", "ctr-aes-caam", 32 },
+
+	{ "AES(STM32) CTR(STM32) 128", "stm32-ctr-aes", 16 },
+	{ "AES(STM32) CTR(STM32) 192", "stm32-ctr-aes", 24 },
+	{ "AES(STM32) CTR(STM32) 256", "stm32-ctr-aes", 32 },
+
+	{ "AES(ARM64 CE) CTR(ARM64 CE) 128", "ctr-aes-ce", 16 },
+	{ "AES(ARM64 CE) CTR(ARM64 CE) 192", "ctr-aes-ce", 24 },
+	{ "AES(ARM64 CE) CTR(ARM64 CE) 256", "ctr-aes-ce", 32 },
+
 	{ "AES(G) XTS(G) 128", "xts(aes-generic)", 32 },
 	{ "AES(G) XTS(G) 192", "xts(aes-generic)", 48 },
 	{ "AES(G) XTS(G) 256", "xts(aes-generic)", 64 },
@@ -238,6 +262,10 @@ static const struct cp_skcipher_tests testcases[] = {
 	{ "AES(i586) XTS(G) 128", "xts(aes-asm)", 32 },
 	{ "AES(i586) XTS(G) 192", "xts(aes-asm)", 48 },
 	{ "AES(i586) XTS(G) 256", "xts(aes-asm)", 64 },
+
+	{ "AES(ARM64 CE) XTS(ARM64 CE) 128", "xts-aes-ce", 32 },
+	{ "AES(ARM64 CE) XTS(ARM64 CE) 192", "xts-aes-ce", 48 },
+	{ "AES(ARM64 CE) XTS(ARM64 CE) 256", "xts-aes-ce", 64 },
 
 	{ "AES(G) LRW(G) 128", "lrw(aes-generic)", 32 },
 	{ "AES(G) LRW(G) 192", "lrw(aes-generic)", 40 },
@@ -267,6 +295,18 @@ static const struct cp_skcipher_tests testcases[] = {
 	{ "AES(MV-CESA) ECB(MV-CESA) 128", "mv-ecb-aes", 16 },
 	{ "AES(MV-CESA) ECB(MV-CESA) 192", "mv-ecb-aes", 24 },
 	{ "AES(MV-CESA) ECB(MV-CESA) 256", "mv-ecb-aes", 32 },
+
+	{ "AES(CAAM) ECB(CAAM) 128", "ecb-aes-caam", 16 },
+	{ "AES(CAAM) ECB(CAAM) 192", "ecb-aes-caam", 24 },
+	{ "AES(CAAM) ECB(CAAM) 256", "ecb-aes-caam", 32 },
+
+	{ "AES(STM32) ECB(STM32) 128", "stm32-ecb-aes", 16 },
+	{ "AES(STM32) ECB(STM32) 192", "stm32-ecb-aes", 24 },
+	{ "AES(STM32) ECB(STM32) 256", "stm32-ecb-aes", 32 },
+
+	{ "AES(ARM64 CE) ECB(ARM64 CE) 128", "ecb-aes-ce", 16 },
+	{ "AES(ARM64 CE) ECB(ARM64 CE) 192", "ecb-aes-ce", 24 },
+	{ "AES(ARM64 CE) ECB(ARM64 CE) 256", "ecb-aes-ce", 32 },
 
 	{ "DES(MV-CESA) CBC(MV-CESA) 56", "mv-cbc-des", 8 },
 	{ "DES(MV-CESA) ECB(MV-CESA) 56", "mv-ecb-des", 8 },
